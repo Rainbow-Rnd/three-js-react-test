@@ -1,14 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import ThreeScene from './ThreeScene';
-import { useEffect } from 'react';
+import React, { useState } from "react";
+import "./App.css";
+import ThreeScene from "./ThreeScene";
+import Popup from "./popup";
 
 function App() {
-        return (
-      <div className="App">
-        {/* Other components and content */}
-        <ThreeScene />
-      </div>
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleModelClick = () => {
+    setIsPopupOpen(true);
+    console.log(isPopupOpen);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  return (
+    <div className="App">
+      <ThreeScene onModelClick={handleModelClick} />{" "}
+      <Popup visible={isPopupOpen} onHide={handleClosePopup} />
+    </div>
   );
 }
+
 export default App;

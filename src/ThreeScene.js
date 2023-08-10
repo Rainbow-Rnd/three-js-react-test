@@ -43,7 +43,7 @@ const ThreeScene = () => {
 
         const loader = new GLTFLoader();
 
-        loader.load( 'Model.glb', function ( gltf ) {
+        loader.load( 'yongin_compressed.glb', function ( gltf ) {
 
             scene.add( gltf.scene );
 
